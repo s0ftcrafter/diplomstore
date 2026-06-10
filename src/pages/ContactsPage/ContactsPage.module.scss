@@ -1,31 +1,40 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .page {
-  max-width: $container-width;
-  margin: 0 auto;
-  padding: $spacing-xl $spacing-xl $spacing-2xl;
+  @include page-container;
+  flex: 1;
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
   font-weight: 600;
   margin-bottom: $spacing-lg;
 }
 
 .card {
+  width: 100%;
   max-width: 560px;
-  padding: $spacing-lg;
+  padding: $spacing-md;
   background: $color-surface;
   border: 1px solid $color-border-light;
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
+
+  @include respond-md {
+    padding: $spacing-lg;
+  }
 }
 
 .item {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   color: $color-text;
+
+  @include respond-md {
+    font-size: 0.95rem;
+  }
 }
 
 .label {
@@ -38,4 +47,5 @@
   color: $color-accent;
   text-decoration: underline;
   text-underline-offset: 2px;
+  word-break: break-word;
 }

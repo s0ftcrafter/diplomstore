@@ -8,8 +8,10 @@ $color-border: #111111;
 $color-border-light: #d0d0d0;
 $color-accent: #2d6a6a;
 $color-error: #dc2626;
+$color-overlay: rgba(0, 0, 0, 0.45);
 
 $header-height: 72px;
+$header-height-mobile: 60px;
 
 $spacing-xs: 0.5rem;
 $spacing-sm: 0.75rem;
@@ -21,3 +23,13 @@ $spacing-2xl: 3rem;
 $font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
 $container-width: 1280px;
+$container-padding: clamp(1rem, 3vw, 2rem);
+
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+$touch-min: 44px;
+$z-header: 100;
+$z-menu: 200;

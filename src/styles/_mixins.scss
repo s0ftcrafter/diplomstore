@@ -17,3 +17,46 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@mixin page-container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $container-padding;
+  padding-bottom: $spacing-2xl;
+}
+
+@mixin respond-sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin respond-xl {
+  @media (min-width: $bp-xl) {
+    @content;
+  }
+}
+
+@mixin respond-below-md {
+  @media (max-width: #{$bp-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin touch-target {
+  min-height: $touch-min;
+  min-width: $touch-min;
+}

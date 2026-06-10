@@ -1,26 +1,40 @@
 @use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .page {
-  max-width: $container-width;
-  margin: 0 auto;
-  padding: $spacing-xl $spacing-xl $spacing-2xl;
+  @include page-container;
+  flex: 1;
 }
 
 .toolbar {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: $spacing-lg;
-  margin-bottom: $spacing-xl;
+  flex-direction: column;
+  align-items: stretch;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+
+  @include respond-md {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-xl;
+  }
 }
 
 .totalBox {
   padding: 10px 16px;
   background: $color-surface;
   border: 1px solid $color-border;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
   color: $color-text;
-  white-space: nowrap;
+  text-align: center;
+
+  @include respond-md {
+    text-align: left;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
 }
 
 .contentLoading {

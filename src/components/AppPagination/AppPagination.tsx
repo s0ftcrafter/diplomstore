@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react'
 import ReactPaginateModule from 'react-paginate'
 import type { ComponentType } from 'react'
 import type { ReactPaginateProps } from 'react-paginate'
 import styles from './AppPagination.module.scss'
 
-// Vite + CJS: default export может быть вложенным объектом { default: Component }
 const ReactPaginate = (
   typeof ReactPaginateModule === 'function'
     ? ReactPaginateModule
@@ -16,11 +16,29 @@ interface AppPaginationProps {
   onPageChange: (page: number) => void
 }
 
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches,
+  )
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)')
+    const onChange = () => setIsMobile(mq.matches)
+    onChange()
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
+  }, [])
+
+  return isMobile
+}
+
 export const AppPagination = ({
   pageCount,
   currentPage,
   onPageChange,
 }: AppPaginationProps) => {
+  const isMobile = useIsMobile()
+
   if (pageCount <= 1) return null
 
   return (
@@ -34,17 +52,17 @@ export const AppPagination = ({
       previousLinkClassName={styles.navLink}
       nextLinkClassName={styles.navLink}
       disabledClassName={styles.disabled}
-      breakClassName={styles.page}
+      breakClassName={styles.break}
       breakLinkClassName={styles.pageLink}
       pageCount={pageCount}
       forcePage={currentPage}
       onPageChange={({ selected }) => {
         if (selected !== currentPage) onPageChange(selected)
       }}
-      previousLabel="← Назад"
-      nextLabel="Вперёд →"
-      marginPagesDisplayed={1}
-      pageRangeDisplayed={3}
+      previousLabel={isMobile ? '←' : '← Назад'}
+      nextLabel={isMobile ? '→' : 'Вперёд →'}
+      marginPagesDisplayed={isMobile ? 0 : 1}
+      pageRangeDisplayed={isMobile ? 2 : 3}
     />
   )
 }
