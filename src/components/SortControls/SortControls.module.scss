@@ -1,0 +1,29 @@
+@use '../../styles/variables' as *;
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  font-size: 0.85rem;
+  color: $color-text-muted;
+}
+
+.select {
+  padding: $spacing-sm $spacing-md;
+  border: 1px solid $color-border;
+  background: $color-surface;
+  color: $color-text;
+  font-size: 0.9rem;
+  min-width: 180px;
+
+  &:focus {
+    outline: 2px solid $color-nike-black;
+    outline-offset: 1px;
+  }
+}

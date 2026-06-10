@@ -1,0 +1,41 @@
+@use '../../styles/variables' as *;
+
+.page {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-xl $spacing-2xl;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: $spacing-lg;
+}
+
+.card {
+  max-width: 560px;
+  padding: $spacing-lg;
+  background: $color-surface;
+  border: 1px solid $color-border-light;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.item {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: $color-text;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.item a {
+  color: $color-accent;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

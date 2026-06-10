@@ -1,0 +1,25 @@
+@use '../../styles/variables' as *;
+
+.wrap {
+  max-width: 600px;
+  margin: $spacing-xl auto;
+  padding: $spacing-lg;
+  text-align: center;
+
+  h1 {
+    margin-bottom: $spacing-md;
+    color: $color-error;
+  }
+
+  p {
+    margin-bottom: $spacing-lg;
+    color: $color-text-muted;
+  }
+
+  button {
+    padding: $spacing-sm $spacing-lg;
+    background: $color-nike-black;
+    color: $color-surface;
+    border: 1px solid $color-border;
+  }
+}

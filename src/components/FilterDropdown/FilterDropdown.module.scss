@@ -1,0 +1,82 @@
+@use '../../styles/variables' as *;
+
+.wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+}
+
+.controls {
+  position: relative;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-lg;
+  min-width: 200px;
+  padding: 10px 16px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  font-size: 0.95rem;
+  color: $color-text;
+}
+
+.chevronDown,
+.chevronUp {
+  width: 8px;
+  height: 8px;
+  border-right: 1.5px solid $color-text;
+  border-bottom: 1.5px solid $color-text;
+  transform: rotate(45deg);
+  margin-top: -3px;
+}
+
+.chevronUp {
+  transform: rotate(-135deg);
+  margin-top: 3px;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 10;
+  min-width: 200px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+}
+
+.option,
+.optionActive {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 0.95rem;
+  color: $color-text;
+  background: $color-surface;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.optionActive {
+  background: #f0f0f0;
+  font-weight: 500;
+}
+
+.apply {
+  padding: 10px 20px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  font-size: 0.95rem;
+  color: $color-text;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}

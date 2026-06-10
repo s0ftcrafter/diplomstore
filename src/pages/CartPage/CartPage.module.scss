@@ -1,0 +1,157 @@
+@use '../../styles/variables' as *;
+
+.page {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-xl $spacing-2xl;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.clearBtn {
+  padding: 8px 16px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  font-size: 0.9rem;
+  color: $color-text;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.empty {
+  padding: $spacing-xl 0;
+  color: $color-text-muted;
+  font-size: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: $spacing-md;
+  align-items: center;
+  padding: $spacing-md;
+  background: $color-surface;
+  border: 1px solid $color-border-light;
+}
+
+.imageLink {
+  display: block;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.itemTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $color-text;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.itemPrice {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.qtyBtn {
+  width: 32px;
+  height: 32px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  font-size: 1.1rem;
+  line-height: 1;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}
+
+.qtyValue {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.removeBtn {
+  width: 32px;
+  height: 32px;
+  background: $color-surface;
+  border: 1px solid $color-border-light;
+  font-size: 0.9rem;
+  color: $color-text-muted;
+
+  &:hover {
+    color: $color-error;
+    border-color: $color-error;
+  }
+}
+
+.totalBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  margin-bottom: $spacing-lg;
+}
+
+.totalLabel {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.totalValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.backLink {
+  display: inline-block;
+  padding: 10px 16px;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  font-size: 0.95rem;
+  color: $color-text;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+}

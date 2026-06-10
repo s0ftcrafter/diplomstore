@@ -1,0 +1,29 @@
+@use '../../styles/variables' as *;
+
+.page {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $spacing-xl $spacing-xl $spacing-2xl;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: $spacing-lg;
+}
+
+.card {
+  max-width: 720px;
+  padding: $spacing-lg;
+  background: $color-surface;
+  border: 1px solid $color-border-light;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: $color-text;
+}
